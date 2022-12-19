@@ -2,40 +2,6 @@
 echo '
 <!DOCTYPE html>
 <html>
-<style>
-.login-container {
-  width: 500px;
-  margin: 0 auto;
-  border: 1px solid #ccc;
-  padding: 20px;
-  text-align: center;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-label, input[type="submit"] {
-  width: 100%;
-  max-width: 250px;
-  margin-bottom: 10px;
-  padding: 12px;
-  box-sizing: border-box;
-}
-
-input[type="text"], input[type="password"] {
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-input[type="submit"] {
-  background-color: #4CAF50;
-  color: white;
-  cursor: pointer;
-}
-</style>
 <head>
   <meta charset="utf-8">
   <title>Kullanıcı Girişi</title>
