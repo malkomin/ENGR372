@@ -18,6 +18,8 @@ echo '
           </div>
           <div class="card-body">
             <form>
+            
+            <h2>AAAAA</h2>
               <div class="form-group">
                 <label for="username">Kullanıcı Adı:</label>
                 <input type="text" class="form-control" id="username" name="username">
