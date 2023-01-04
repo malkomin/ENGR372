@@ -1,0 +1,97 @@
+<html>
+    <head>
+    <title>riza</title>
+</head>
+<body>
+<script>
+    function UpdateResult() {
+        var from = document.getElementById("from");
+        var to = document.getElementById("to");
+        var unit = document.getElementById("unit");
+
+        let result;
+        if (from === 'kmh') {
+            result = parseFloat(speed);
+        } else if (from === 'mph') {
+            result = parseFloat(speed) * 1.6;
+        } else if (from === 'ms') {
+            result = parseFloat(speed) * 3.6;
+        } else if (from === 'fpm') {
+            result = parseFloat(speed) / 88;
+        } else if (from === 'knots') {
+            result = from(speed) * 1.852;
+        }
+
+        // çıktı birimine göre hızı dönüştürün ve sonucu ekrana yazdırın
+        if (to === 'kmh') {
+            result = `${result.toFixed(2)} kilometre/saat`;
+        } else if (to === 'mph') {
+            result = `${(result / 1.6).toFixed(2)} mil/saat`;
+        } else if (to === 'ms') {
+            result = `${(result / 3.6).toFixed(2)} metre/saniye`;
+        } else if (to === 'fpm') {
+            result = `${(result * 88).toFixed(2)} mil/dakika`;
+        } else if (to === 'knots') {
+            result = `${(result / 1.852).toFixed(2)} nod/saat`;
+        }
+
+        document.getElementById("to").innerHTML = `<p>Sonuç: ${to}</p>`;
+    }
+
+
+</script>
+<div id="content">
+
+    <div id="quickcalc" style="display:none;"></div>
+
+    <div id="result" class="resulttext"></div>
+    <form>
+        <table width="500" height="500" background="speed.png" border="0"  >
+            <tr>
+                <td></td>
+                <td width="150" height="300"></td>
+                <td width="10" height="10"></td>
+                <td width="150" height="300"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td width="100" height="50" class="cell">From:<br><input type="text" name="inputUnit" class="inputUnit" id="inputUnit" onkeyup="UpdateResult();" autofocus=""></td>
+                <td width="10" height="10"></td>
+                <td width="100" height="50" class="cell">To:<br><input type="text" name="to" class="outputUnit" id="to" style="background-color:#eeeeee;" readonly=""></td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td width="100" height="50" class="cell">
+                            <select id="inputUnit" name="inputUnit">
+                                <option value="kmh">Kilometre/saat</option>
+                                <option value="mph">Mil/saat</option>
+                                <option value="ms">Metre/saniye</option>
+                                <option value="fpm">Mil/dakika</option>
+                                <option value="knots">Nod/saat</option>
+                            </select></td>
+                        <td width="10" height="10"></td>
+                        <td width="100" height="50" class="cell">
+                            <select id="outputUnit" name="outputUnit">
+                                <option value="kmh">Kilometre/saat</option>
+                                <option value="mph">Mil/saat</option>
+                                <option value="ms">Metre/saniye</option>
+                                <option value="fpm">Mil/dakika</option>
+                                <option value="knots">Nod/saat</option>
+                            </select></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td width="150" height="100"></td>
+                        <td width="10" height="10"></td>
+                        <td width="150" height="100"></td>
+                        <td></td>
+                    </tr>
+
+
+                    </table>
+                    </form>
+
+                    </html>
