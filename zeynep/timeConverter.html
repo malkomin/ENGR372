@@ -1,0 +1,158 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>Time Converter</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.4/semantic.min.css">
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+
+
+  <div class="converter-body">
+    <h1 class="converter-title">Time Converter</h1>
+
+    <input type="text" placeholder="Input" id="input">
+    <span id="equal">=</span>
+    <input type="text" placeholder="Result" id="result">
+
+    <select  id="inputType">
+      <option value="second">second [s]>second</option>
+      <option value="milisecond">milisecond [ms]</option>
+      <option value="minute">minute[min]</option>
+      <option value="hour">hour</option>
+      <option value="microsecond">microsecond</option>
+      <option value="nanosecond">nanosecond</option>
+    </select>
+
+    <select  id="resultType">
+      <option value="second2">second [s]>second</option>
+      <option value="milisecond2">milisecond [ms]</option>
+      <option value="minute2">minute[min]</option>
+      <option value="hour2">hour</option>
+      <option value="microsecond2">microsecond</option>
+      <option value="nanosecond2">nanosecond</option>
+    </select>
+
+  </div>
+
+</body>
+
+<script>
+  var input = document.getElementById('input');
+  var result = document.getElementById('result');
+  var inputType = document.getElementById('inputType');
+  var resultType = document.getElementById('resultType');
+  var option_from,option_to;
+
+  console.log(input);
+
+  input.addEventListener("keyup",calculateTime);
+  inputType.addEventListener("change",calculateTime);
+  resultType.addEventListener("change",calculateTime);
+
+  option_from = inputType.id;
+  option_to = resultType.id;
+
+  function calculateTime(){
+    option_from = inputType.value;
+    option_to = resultType.value;
+
+
+    if(option_from === "second" && option_to === "second2"){
+      result.value = Number(input.value);
+    }else if(option_from === "second" && option_to === "milisecond2"){
+      result.value = Number(input.value)*1000;
+    }else if(option_from === "second" && option_to === "minute2"){
+      result.value = Number(input.value)/60;
+    }else if(option_from === "second" && option_to === "hour2"){
+      result.value = Number(input.value)/3600;
+    }else if(option_from === "second" && option_to === "microsecond2"){
+      result.value = Number(input.value)*1000000;
+    }else if(option_from === "second" && option_to === "nanosecond2"){
+      result.value = Number(input.value)*1000000000;
+    }else if(option_from === "milisecond" && option_to === "second2"){
+      result.value = Number(input.value)/1000;
+    }else if(option_from === "milisecond" && option_to === "milisecond2"){
+      result.value = Number(input.value);
+    }else if(option_from === "milisecond" && option_to === "minute2"){
+      result.value = Number(input.value)/60000;
+    }else if(option_from === "milisecond" && option_to === "hour2"){
+      result.value = Number(input.value)/3600000;
+    }else if(option_from === "milisecond" && option_to === "microsecond2"){
+      result.value = Number(input.value)*1000;
+    }else if(option_from === "milisecond" && option_to === "nanosecond2"){
+      result.value = Number(input.value)*1000000;
+    }else if(option_from === "minute" && option_to === "second2"){
+      result.value = Number(input.value)*60;
+    }else if(option_from === "minute" && option_to === "milisecond2"){
+      result.value = Number(input.value)*60000;
+    }else if(option_from === "minute" && option_to === "minute2"){
+      result.value = Number(input.value);
+    }else if(option_from === "minute" && option_to === "hour2"){
+      result.value = Number(input.value)/60;
+    }else if(option_from === "minute" && option_to === "microsecond2"){
+      result.value = Number(input.value)*60000000;
+    }else if(option_from === "minute" && option_to === "nanosecond2"){
+      result.value = Number(input.value)*60000000000;
+    }else if(option_from === "hour" && option_to === "second2"){
+      result.value = Number(input.value)*3600;
+    }else if(option_from === "hour" && option_to === "milisecond2"){
+      result.value = Number(input.value)*3600000;
+    }else if(option_from === "hour" && option_to === "minute2"){
+      result.value = Number(input.value)*60;
+    }else if(option_from === "hour" && option_to === "hour2"){
+      result.value = Number(input.value);
+    }else if(option_from === "hour" && option_to === "microsecond2"){
+      result.value = Number(input.value)*3600000000;
+    }else if(option_from === "hour" && option_to === "nanosecond2"){
+      result.value = Number(input.value)*3600000000000;
+    }else if(option_from === "microsecond" && option_to === "second2"){
+      result.value = Number(input.value)/1000000;
+    }else if(option_from === "microsecond" && option_to === "milisecond2"){
+      result.value = Number(input.value)/1000;
+    }else if(option_from === "microsecond" && option_to === "minute2"){
+      result.value = Number(input.value)/60000000;
+    }else if(option_from === "microsecond" && option_to === "hour2"){
+      result.value = Number(input.value)/3600000000;
+    }else if(option_from === "microsecond" && option_to === "microsecond2"){
+      result.value = Number(input.value);
+    }else if(option_from === "microsecond" && option_to === "nanosecond2"){
+      result.value = Number(input.value)*1000;
+    }else if(option_from === "nanosecond" && option_to === "second2"){
+      result.value = Number(input.value)/1000000000;
+    }else if(option_from === "nanosecond" && option_to === "milisecond2"){
+      result.value = Number(input.value)/1000000;
+    }else if(option_from === "nanosecond" && option_to === "minute2"){
+      result.value = Number(input.value)/60000000000;
+    }else if(option_from === "nanosecond" && option_to === "hour2"){
+      result.value = Number(input.value)/3600000000000;
+    }else if(option_from === "nanosecond" && option_to === "microsecond2"){
+      result.value = Number(input.value)/1000;
+    }else if(option_from === "nanosecond" && option_to === "nanosecond2"){
+      result.value = Number(input.value);
+    }
+  }
+  
+
+</script>
+
+
+</html>
