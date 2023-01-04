@@ -1,0 +1,129 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Length Calculator</title>
+        <style>
+            body{
+                background-color: yellowgreen;
+            }
+            input:focus{
+                background-color: #e9b764;
+            }
+            input[type="button"]:hover{
+                background-color: #e9b764;
+            }
+            input:focus,select:focus{
+                background-color: #e9b764;
+            }
+            input[type="number"]:hover{
+                background-color: #e9b764;
+            }
+            input:focus,select:hover{
+                background-color: #e9b764;
+            }
+            input[type="number"]{
+                width: 20ch;
+            }
+            td{
+                font-size: 23px;
+            }
+            input,select{
+                width: 20ch;
+                border-radius: 8px;
+            }
+        </style>
+        <script>
+            function calculate(){
+                var input = document.myform.input.value;
+                var to = document.getElementById("to");
+                var from = document.getElementById("from");
+                               
+                if (from.value=="m" && to.value=="m"){
+                    document.myform.result.value=input;
+                }else if(from.value=="m" && to.value=="km"){
+                    document.myform.result.value=input*0.001;
+                }else if(from.value=="m" && to.value=="mm"){
+                    document.myform.result.value=input*1000;
+                }else if(from.value=="km" && to.value=="m"){
+                    document.myform.result.value=input*1000;
+                }else if(from.value=="km" && to.value=="km"){
+                    document.myform.result.value=input;
+                }else if(from.value=="km" && to.value=="mm"){
+                    document.myform.result.value=input*1000000;
+                }else if(from.value=="mm" && to.value=="m"){
+                    document.myform.result.value=input*0.001;
+                }else if(from.value=="mm" && to.value=="km"){
+                    document.myform.result.value=input*0.000001;
+                }else if(from.value=="mm" && to.value=="mm"){
+                    document.myform.result.value=input;
+                }else if(from.value=="m" && to.value=="in"){
+                    document.myform.result.value=input*39.37;
+                }else if(from.value=="m" && to.value=="ft"){
+                    document.myform.result.value=input*3.28;
+                }else if(from.value=="km" && to.value=="in"){
+                    document.myform.result.value=input*39370;
+                }else if(from.value=="km" && to.value=="ft"){
+                    document.myform.result.value=input*3280;
+                }else if(from.value=="mm" && to.value=="in"){
+                    document.myform.result.value=input*0.03937;
+                }else if(from.value=="mm" && to.value=="ft"){
+                    document.myform.result.value=input*0.00328;
+                }else if(from.value=="in" && to.value=="m"){
+                    document.myform.result.value=input*0.0254;
+                }else if(from.value=="in" && to.value=="km"){
+                    document.myform.result.value=input*0.0000254;
+                }else if(from.value=="in" && to.value=="mm"){
+                    document.myform.result.value=input*25.4;
+                }else if(from.value=="in" && to.value=="in"){
+                    document.myform.result.value=input;
+                }else if(from.value=="in" && to.value=="ft"){
+                    document.myform.result.value=input*0.0833;
+                }else if(from.value=="ft" && to.value=="m"){
+                    document.myform.result.value=input*0.3048;
+                }else if(from.value=="ft" && to.value=="km"){
+                    document.myform.result.value=input*0.0003048;
+                }else if(from.value=="ft" && to.value=="mm"){
+                    document.myform.result.value=input*304.8;
+                }else if(from.value=="ft" && to.value=="in"){
+                    document.myform.result.value=input*12;
+                }else if(from.value=="ft" && to.value=="ft"){
+                    document.myform.result.value=input;
+                }
+        }
+        </script>
+    </head>
+    <body>
+        <br>
+        <form name="myform">
+        <div align="center">
+        <h1 class="calculator-title">Length Calculator</h1>
+        <br>
+    
+        <table width="781" height="113" border="0" bordercolor="black" background="images/ruler.png">
+            <tr>
+                <td align="center" valign="bottom"><input type="number" placeholder="From" id="input" name="input"></td><td align="center" valign="bottom">&#8594&#8594</td>
+                <td align="center" valign="bottom"><input type="number" placeholder="To" name="result" id="result"></td><td></td>
+            </tr>
+            <tr>
+                <td height="30" align="center" valign="top"><select name="from" id="from">
+                    <option value="m">Meter(m)</option>
+                    <option value="km">Kilometer(km)</option>
+                    <option value="mm">Milimeter(mm)</option>
+                    <option value="in">Inches(in)</option>
+                    <option value="ft">Feet(ft)</option></select></td>
+                <td align="center" valign="top">&#8594&#8594</td>
+                <td align="center" valign="top"><select name="to" id="to">
+                    <option value="m">Meter(m)</option>
+                    <option value="km">Kilometer(km)</option>
+                    <option value="mm">Milimeter(mm)</option>
+                    <option value="in">Inches(in)</option>
+                    <option value="ft">Feet(ft)</option></select></td>
+                <td align="left" valign="top"><input type="button" value="  CALCULATE  " onclick="calculate()"></td>
+            </tr>
+        </table>
+        <br>
+        <table width="800" height="2000" border="1" bordercolor="black" style="background-color:#FFFFFF">
+            <tr><td></td></tr>
+        </table>
+    </body>
+</html>

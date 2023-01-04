@@ -1,0 +1,131 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Area Calculator</title>
+        <style>
+            body{
+                background-color: lightblue;
+            }
+            input:focus{
+                background-color: lightsalmon;
+            }
+            input[type="button"]:hover{
+                background-color: lightsalmon;
+            }
+            input:focus,select:focus{
+                background-color: lightsalmon;
+            }
+            input[type="number"]:hover{
+                background-color: lightsalmon;
+            }
+            input:focus,select:hover{
+                background-color: lightsalmon;
+            }
+            input[type="number"]{
+                width: 20ch;
+            }
+            td{
+                font-size: 23px;
+            }
+            input,select{
+                width: 20ch;
+                border-radius: 8px;
+            }
+        </style>
+        <script>
+            function calculate(){
+                var input = document.myform.input.value;
+                var to = document.getElementById("to");
+                var from = document.getElementById("from");
+
+                if (from.value=="m2" && to.value=="m2"){
+                    document.myform.result.value=input;
+                }else if(from.value=="m2" && to.value=="km2"){
+                    document.myform.result.value=input*Math.pow(0.001, 2);
+                }else if(from.value=="m2" && to.value=="mm2"){
+                    document.myform.result.value=input*Math.pow(1000, 2);
+                }else if(from.value=="km2" && to.value=="m2"){
+                    document.myform.result.value=input*Math.pow(1000, 2);
+                }else if(from.value=="km2" && to.value=="km2"){
+                    document.myform.result.value=input;
+                }else if(from.value=="km2" && to.value=="mm2"){
+                    document.myform.result.value=input*Math.pow(1000000, 2);
+                }else if(from.value=="mm2" && to.value=="m2"){
+                    document.myform.result.value=input*Math.pow(1000, 2);
+                }else if(from.value=="mm2" && to.value=="km2"){
+                    document.myform.result.value=input*Math.pow(0.000001, 2);
+                }else if(from.value=="mm2" && to.value=="mm2"){
+                    document.myform.result.value=input;
+                }else if(from.value=="m2" && to.value=="ha"){
+                    document.myform.result.value=input*0.0001;
+                }else if(from.value=="m2" && to.value=="ac"){
+                    document.myform.result.value=input*0.0002471054;
+                }else if(from.value=="km2" && to.value=="ha"){
+                    document.myform.result.value=input*100;
+                }else if(from.value=="km2" && to.value=="ac"){
+                    document.myform.result.value=input*3280;
+                }else if(from.value=="mm2" && to.value=="ha"){
+                    document.myform.result.value=input*247.105;
+                }else if(from.value=="mm2" && to.value=="ac"){
+                    document.myform.result.value=input*2.471053814E-10;
+                }else if(from.value=="ha" && to.value=="m2"){
+                    document.myform.result.value=input*10000;
+                }else if(from.value=="ha" && to.value=="km2"){
+                    document.myform.result.value=input*0.01;
+                }else if(from.value=="ha" && to.value=="mm2"){
+                    document.myform.result.value=input*10000000000;
+                }else if(from.value=="ha" && to.value=="ha"){
+                    document.myform.result.value=input;
+                }else if(from.value=="ha" && to.value=="ac"){
+                    document.myform.result.value=input*2.4710538147;
+                }else if(from.value=="ac" && to.value=="m2"){
+                    document.myform.result.value=input*4046.8564224;
+                }else if(from.value=="ac" && to.value=="km2"){
+                    document.myform.result.value=input*0.0040468564;
+                }else if(from.value=="ac" && to.value=="mm2"){
+                    document.myform.result.value=input*4046856422.4;
+                }else if(from.value=="ac" && to.value=="ha"){
+                    document.myform.result.value=input*0.4046856422;
+                }else if(from.value=="ac" && to.value=="ac"){
+                    document.myform.result.value=input;
+                }
+            }
+        </script>
+    </head>
+    
+    <body>
+        <br>
+        <form name="myform">
+        <div align="center">
+        <h1 class="calculator-title">Area Calculator</h1>
+        <br>
+
+        <table width="1200" height="675" border="0" bordercolor="black" background="images/farm.jpg">
+            <tr>
+                <td align="center" valign="bottom"><input type="number" placeholder="From" id="input" name="input"></td><td align="center" valign="bottom"></td>
+                <td align="center" valign="bottom"><input type="number" placeholder="To" name="result" id="result"></td><td></td>
+            </tr>
+            <tr>
+                <td align="center" valign="top"><select name="from" id="from">
+                    <option value="m2">MeterSquare(m^2)</option>
+                    <option value="km2">KilometerSquare(km^2)</option>
+                    <option value="mm2">MilimeterSquare(mm^2)</option>
+                    <option value="hectare">Hectare(ha)</option>
+                    <option value="acre">Acre(ac)</option></select></td>
+                <td align="center" valign="top"></td>
+                <td align="center" valign="top"><select name="to" id="to">
+                    <option value="m2">MeterSquare(m^2)</option>
+                    <option value="km2">KilometerSquare(km^2)</option>
+                    <option value="mm2">MilimeterSquare(mm^2)</option>
+                    <option value="ha">Hectare(ha)</option>
+                    <option value="ac">Acre(ac)</option></select></td>
+                <td align="left" valign="top"><input type="button" value="  CALCULATE  " onclick="calculate()"></td>
+                </tr>
+            </table>
+            <br>
+            <table width="800" height="2000" border="1" bordercolor="black" style="background-color:#FFFFFF">
+                <tr><td></td></tr>
+            </table>
+        
+    </body>
+</html>
