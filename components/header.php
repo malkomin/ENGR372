@@ -2,6 +2,10 @@
 
 function getHeader($pageName)
 {
+    if(session_status() != PHP_SESSION_ACTIVE)
+    {
+        session_start();
+    }
     echo '
 <!DOCTYPE html>
 <html lang="en">
@@ -19,25 +23,32 @@ function getHeader($pageName)
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
+  ';
+    if(isset($_SESSION["auth"]) && $_SESSION["auth"])
+    {
+        echo '
+        <ul class="navbar-nav">
       <li class="nav-item active">
         <a class="nav-link" href="#">Ana Sayfa <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Hesap Özellikleri</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Örnekler</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Hakkımızda</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">İletişim</a>
+      
+      <li class="nav-item ">
+        <a class="nav-link" href="logout.php">Çıkış</a>
       </li>
     </ul>
+    <ul class="navbar-nav justify-content-end">
+            <li class="nav-item ">
+                    <a class="nav-link" href="" data-bs-target="#myModal" data-bs-toggle="modal">About</a>
+            </li>
+    </ul>
+    
+        ';
+    }
+    echo '
   </div>
 </nav>
-</header>
-';
+</header>';
 }

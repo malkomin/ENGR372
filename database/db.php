@@ -14,8 +14,14 @@ function getQuery($query)
     return json_decode(json_encode($json));
 }
 
+
 function insertQuery($query)
 {
     global $conn;
-
+    if($conn->query($query) === TRUE) {
+        return 1;
+    }
+    else {
+        echo "Error : " . $query. "<br>" . $conn->error;
+    }
 }
