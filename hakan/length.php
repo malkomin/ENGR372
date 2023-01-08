@@ -119,7 +119,7 @@ echo'
         <h1 class="calculator-title">Length Calculator</h1>
         <br>
     
-        <table width="781" height="113" border="1" bordercolor="black" background="images/ruler.png">
+        <table width="781" height="113" border="0" bordercolor="black" background="images/ruler.png">
             <tr>
                 <td align="center" valign="bottom"><input type="number" placeholder="From" id="input" name="from_value"></td><td align="center" valign="bottom">&#8594&#8594</td>
                 <td align="center" valign="bottom"><input type="number" placeholder="To" name="to_value" id="result"></td><td div align="left" valign="bottom"><input type="submit" value="SUBMIT"></td>

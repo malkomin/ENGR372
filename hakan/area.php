@@ -1,7 +1,14 @@
+<?php
+require "././database/operations.php";
+require "././components/header.php";
+echo'
 <html>
     <head>
         <meta charset="UTF-8">
         <title>Area Calculator</title>
+        <header>
+            '.getHeader("Area Calculator").'
+        </header>
         <style>
             body{
                 background-image: url("images/areabg.jpg");
@@ -116,18 +123,18 @@
 
         <table class="area" width="781" height="113" border="0" bordercolor="black" background="images/area.jpg">
             <tr>
-                <td align="center" valign="bottom"><input type="number" placeholder="From" id="input" name="input"></td><td align="center" valign="bottom">&#8594&#8594</td>
-                <td align="center" valign="bottom"><input type="number" placeholder="To" name="result" id="result"></td><td></td>
+                <td align="center" valign="bottom"><input type="number" placeholder="From" id="input" name="from_value"></td><td align="center" valign="bottom">&#8594&#8594</td>
+                <td align="center" valign="bottom"><input type="number" placeholder="To" name="to_value" id="result"></td><td><input type="submit" value="SUBMIT"></td>
             </tr>
             <tr>
-                <td align="center" valign="top"><select name="from" id="from">
+                <td align="center" valign="top"><select name="from_unit" id="from">
                     <option value="m2">Square Meter(m^2)</option>
                     <option value="km2">Square Kilometer(km^2)</option>
                     <option value="mm2">square millimeter(mm^2)</option>
                     <option value="hectare">Hectare(ha)</option>
                     <option value="acre">Acre(ac)</option></select></td>
                 <td align="center" valign="top">&#8594&#8594</td>
-                <td align="center" valign="top"><select name="to" id="to">
+                <td align="center" valign="top"><select name="to_unit" id="to">
                     <option value="m2">Square Meter(m^2)</option>
                     <option value="km2">Square Kilometer(km^2)</option>
                     <option value="mm2">Square Millimeter(mm^2)</option>
@@ -171,6 +178,6 @@
             </tr>
             <tr></tr>
         </table>
-        
+    </form>
     </body>
-</html>
+</html>';
