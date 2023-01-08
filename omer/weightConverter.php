@@ -105,8 +105,8 @@ echo '
         function convert() {
             x = document.myform.userInput.value;
 
-            TypeOne = document.myform.to_unit.value;
-            TypeTwo = document.myform.from_unit.value;
+            TypeOne = document.myform.from_unit.value;
+            TypeTwo = document.myform.to_unit.value;
 
 
             if (TypeOne === "kilogram") {
@@ -150,12 +150,12 @@ echo '
 
         function switchPlaces() {
 
-            TypeOne = document.myform.to_unit.value;
-            TypeTwo = document.myform.from_unit.value;
+            TypeOne = document.myform.from_unit.value;
+            TypeTwo = document.myform.to_unit.value;
 
 
-            document.myform.to_unit.value = TypeTwo;
-            document.myform.from_unit.value = TypeOne;
+            document.myform.from_unit.value = TypeTwo;
+            document.myform.to_unit.value = TypeOne;
 
             convert();
 
@@ -200,7 +200,7 @@ echo '
             <tr height="50">
 
                 <td width="230" align="right">
-            <input type="number" id="userInput" name="to_value" onchange="convert()" placeholder="From"/>
+            <input type="number" id="userInput" name="from_value" onchange="convert()" placeholder="From"/>
 
             </td>
 
@@ -210,7 +210,7 @@ echo '
             </td>
 
             <td width="215">
-            <input  type="number" id="resultofConvert" name="from_value" placeholder="To"/>
+            <input  type="number" id="resultofConvert" name="to_value" placeholder="To"/>
 
             </td>
 
@@ -221,7 +221,7 @@ echo '
             <tr>
                 <td align="center" >
 
-                    <select name="to_unit" id = "firstType" onchange="convert()">
+                    <select name="from_unit" id = "firstType" onchange="convert()">
                         <option value="kilogram"  id="kg"  >Kilogram [kg]</option>
                         <option value="gram"      id="g"   >Gram [g]</option>
                         <option value="miligram"  id="mg"  >Miligram [mg]</option>
@@ -238,7 +238,7 @@ echo '
             </td>              
 
             <td>
-                <select name="from_unit" id = "secondType" onchange="convert()" >
+                <select name="to_unit" id = "secondType" onchange="convert()" >
                     <option value="kilogram"  id="kg"  >Kilogram [kg]</option>
                     <option value="gram"      id="g"   >Gram [g]</option>
                     <option value="miligram"  id="mg"  >Miligram [mg]</option>
