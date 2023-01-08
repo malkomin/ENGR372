@@ -2,7 +2,16 @@
 require 'db.php';
 
 $variables = $_POST;
-
+if(isset($variables["type"]) && isset($variables["from_value"])  && isset( $variables["to_value"]) && isset($variables["from_unit"]) && isset($variables["to_unit"]))
+{
+    $type = $variables["type"];
+    $fromValue = $variables["from_value"];
+    $toValue = $variables["to_value"];
+    $fromUnit = $variables["from_unit"];
+    $toUnit = $variables["to_unit"];
+    insertOperation($type, $fromValue, $toValue, $fromUnit, $toUnit);
+    header('Location: ' . $_SERVER['HTTP_REFERER']);
+}
 
 
 function insertOperation($type, $from_value, $to_value, $from_unit, $to_unit)

@@ -1,5 +1,4 @@
 <?php
-require './components/header.php';
 require "../components/header.php";
 echo '
 <html>
@@ -11,7 +10,7 @@ echo '
 ' . getHeader("force") . '
 </header>
 <body>
-    <form name="myform" action="../database/operations.php">
+    <form name="myform" action="../database/operations.php" method="post">
     <input type="hidden" name="type" value="force">
         <div>
             <table id="table" width="949" height="700" background="power.png" border="0"  >

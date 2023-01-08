@@ -1,5 +1,5 @@
 <?php
-require "./components/header.php";
+require "../components/header.php";
 
 
 echo '
@@ -20,8 +20,7 @@ echo '
   </div>
 
   <div class="converter-body">
-  require "././database/operations.php";
-  <form name="myform" action="../database/operations.php">
+  <form name="myform" action="../database/operations.php" method="post">
     <h1 class="converter-title">Time Converter</h1>
 
     <input type="text" placeholder="Input" id="input" name="from_value">

@@ -1,5 +1,4 @@
 <?php
-require "./database/operations.php";
 require "../components/header.php";
 
 
@@ -175,7 +174,7 @@ echo '
     <div id="headerStyle"> WEIGHT CONVERTER </div>
 
 
-    <form name="myform" action="../database/operations.php">
+    <form name="myform" action="../database/operations.php" method="post">
         <table border="0" height="500" width="613" background="weight.png">
         <input type="hidden" name="type" value="Weight">
 

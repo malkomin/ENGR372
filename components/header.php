@@ -29,20 +29,35 @@ function getHeader($pageName)
         echo '
         <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Ana Sayfa <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/ENGR-372/ENGR372/dashboard.php">Hesap Makinesi<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Hesap Özellikleri</a>
+        <a class="nav-link" href="/ENGR-372/ENGR372/hakan/area.php">Alan</a>
       </li>
-      
+      <li class="nav-item">
+        <a class="nav-link" href="/ENGR-372/ENGR372/hakan/length.php">Uzunluk</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/ENGR-372/ENGR372/omer/volumeConverter.php">Hacim</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/ENGR-372/ENGR372/omer/weightConverter.php">Ağırlık</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/ENGR-372/ENGR372/riza/force.php">Güç</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/ENGR-372/ENGR372/riza/speed.php">Hız</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/ENGR-372/ENGR372/zeynep/angleConverter.php">Açı</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/ENGR-372/ENGR372/zeynep/timeConverter.php">Zaman</a>
+      </li>
       <li class="nav-item ">
-        <a class="nav-link" href="logout.php">Çıkış</a>
+        <a class="nav-link" href="/ENGR-372/ENGR372/logout.php">Çıkış</a>
       </li>
-    </ul>
-    <ul class="navbar-nav justify-content-end">
-            <li class="nav-item ">
-                    <a class="nav-link" href="" data-bs-target="#myModal" data-bs-toggle="modal">About</a>
-            </li>
     </ul>
     
         ';

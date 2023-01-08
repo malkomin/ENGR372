@@ -12,9 +12,8 @@ echo '
 ' . getHeader("Anasayfa") . '
 </header>
 <body>
-
-<div class="container ">
-<div class="calculator-box ">
+<div class="container-calculator">
+<div class="calculator-box">
     <div class="row">
     <div class="col align-self-center align-items-center mb-3">
         <label for="first_input">İlk değer</label>

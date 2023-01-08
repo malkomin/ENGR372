@@ -1,6 +1,6 @@
 <?php
-require "././database/operations.php";
-require "././components/header.php";
+require "../database/operations.php";
+require "../components/header.php";
 echo'
 <html>
     <head>
@@ -116,7 +116,7 @@ echo'
     
     <body>
         <br>
-        <form name="myform">
+        <form name="myform" method="post" action="../database/operations.php">
         <div align="center">
         <h1 class="calculator-title">Area Calculator</h1>
         <br>
