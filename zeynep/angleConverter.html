@@ -2,39 +2,47 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <title>Angle Converter</title>
 
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.4/semantic.min.css">
 
-  <title>Angle Converter</title>
 </head>
-<body>
+<body style="background: #0e8c8c">
 
-  <div class="converter-body">
-  <h1 class="converter-title">Angle Converter</h1>
+  <div class="image-angle">
+    <img src="img/newanglemeter.png" alt="Angle Meter" width="1000px" height="500px" >
+  </div>
 
-  <input type="text" placeholder="Input" id="input">
-  <span>=</span>
-  <input type="text" placeholder="Result" id="result">
+  <div class="image-arrow">
+    <img src="img/ok_isareti.png" alt="Arrow" width="100px" height="100px" >
+  </div>
 
-  <select class="ui simple dropdown item" id="inputType">
-    <option value="degree">degree</option>
-    <option value="minute">minute</option>
-    <option value="second">second</option>
-    <option value="radian">radian</option>
-    <option value="revolution">revolution</option>
-  </select>
+  <div class="converter-body" >
+    <h1 class="converter-title">Angle Converter</h1>
 
-  <select  id="resultType">
-    <option value="degree2">degree</option>
-    <option value="minute2">minute</option>
-    <option value="second2">second</option>
-    <option value="radian2">radian</option>
-    <option value="revolution2">revolution</option>
-  </select>
+    <input type="text" placeholder="Input" id="input">
+    <span id="equal">=</span>
+    <input type="text" placeholder="Result" id="result">
 
-</div>
+    <select style="color: #0e8c8c" id="inputType">
+      <option value="degree">degree</option>
+      <option value="minute">minute</option>
+      <option value="second">second</option>
+      <option value="radian">radian</option>
+      <option value="revolution">revolution</option>
+    </select>
+
+    <select  style="color: #0e8c8c" id="resultType">
+      <option value="degree2">degree</option>
+      <option value="minute2">minute</option>
+      <option value="second2">second</option>
+      <option value="radian2">radian</option>
+      <option value="revolution2">revolution</option>
+    </select>
+
+  </div>
 </body>
 <script>
   var input = document.getElementById('input');
