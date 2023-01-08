@@ -1,7 +1,7 @@
 <?php
 $dbname = "group3";
-$username = "root";
-$password = "";
+$username = "abc";
+$password = "abc";
 $host = "localhost";
 
 $conn = mysqli_connect($host, $username, $password, $dbname);
