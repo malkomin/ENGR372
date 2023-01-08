@@ -120,7 +120,7 @@ echo'
         <div align="center">
         <h1 class="calculator-title">Area Calculator</h1>
         <br>
-
+        <input type="hidden" name="type" value="area">
         <table class="area" width="781" height="113" border="0" bordercolor="black" background="images/area.jpg">
             <tr>
                 <td align="center" valign="bottom"><input type="number" placeholder="From" id="input" name="from_value"></td><td align="center" valign="bottom">&#8594&#8594</td>

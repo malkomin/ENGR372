@@ -7,10 +7,7 @@ echo '
 <head>
   <meta charset="utf-8">
   <title>Time Converter</title>
-
-
   <link rel="stylesheet" href="main.css">
-
   ' . getHeader("Time Converter") . '
 </head>
 <body style="background: #8a73ff">

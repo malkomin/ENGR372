@@ -233,7 +233,7 @@ echo '
 
                 <td align="center">
             <input type="button" id="btnConvert" value="CONVERT" onclick="convert()"/>
-            <input type="button" id="btnSubmit" value="SUBMIT" onclick=""/>
+            <input type="submit" id="btnSubmit" value="SUBMIT" />
             </td>              
 
             <td>

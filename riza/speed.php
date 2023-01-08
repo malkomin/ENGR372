@@ -55,10 +55,12 @@ echo '
                 </tr>
                 <tr>
                     <td width="620" height="50"></td>
-                    <td width="30"><div>Hız:</div></td>
-                    <td width="100"><label for="speed"></label><input type="text" name="from_value" id="speed" oninput="convert()" style="width:100px; height:20px;" ></td>
+                    <td width="30"></td>
+                    <td width="100">
+                    <label for="speed">Hız</label>
+                    <input type="text" name="from_value" id="speed" oninput="convert()" style="width:150px; height:20px;" ></td>
                     <td width="10"></td>
-                    <td width="100"><label for="result">Sonuç:</label><output color="white" type="text" name="to_value" id="result"></td>
+                    <td width="100"><label for="result">Sonuç:</label><input readonly type="text" name="to_value" id="result" style="width:150px; height:20px;"></td>
                     <td width="640"></td>
                     </tr>
                     <tr>
@@ -86,7 +88,9 @@ echo '
                     <tr>
                         <td width="620"  height="100"></td>
                         <td width="30"></td>
-                        <td width="100"></td>
+                        <td width="100">
+        <input type="submit" value="Kaydet">    
+        </td>
                         <td width="10"></td>
                         <td width="100"></td>
                         <td width="640"></td>
@@ -173,7 +177,7 @@ echo '
                 result = speed + " kn";
             }
         }
-        document.getElementById("result").innerHTML = result;
+        document.getElementById("result").value = result;
     }
 </script>
 </body>

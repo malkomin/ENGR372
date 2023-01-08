@@ -10,6 +10,7 @@ echo '
 </head>
 <header>
 ' . getHeader("Anasayfa") . '
+<link rel="stylesheet" href="./main.css">
 </header>
 <body>
 <div class="container-calculator">

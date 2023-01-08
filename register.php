@@ -3,7 +3,11 @@ require "./components/header.php";
 
 echo '
 <html>
+   
+<head>
     ' . getHeader("Giriş") . '
+    <link rel="stylesheet" href="./main.css">
+</head>
 <body>
  <div class="login-form">
        <div class="container">
