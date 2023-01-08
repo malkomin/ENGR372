@@ -1,4 +1,5 @@
 <?php
+require './components/header.php';
 echo '
 <html>
     <head>
