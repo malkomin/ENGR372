@@ -97,6 +97,12 @@ echo '
             #result{
                 background-color: #67E089;
             }
+            #btnSubmit{
+                margin-top: 10px;
+                margin-left:220px;
+                height: 30px;
+                width: 90px;
+            }
 
 
 
@@ -212,6 +218,8 @@ echo '
             <input type="button" id="btnConvert" value="CONVERT" onclick="convert()"/>
 
             <input type="button" id="btnSwitch" value="SWITCH" onclick="switchPlaces()"/>
+
+            <input type="button" id="btnSubmit" value="SUBMIT" onclick=""/>
             </td></tr>
 
 
