@@ -1,8 +1,20 @@
-<!-- PROJECT -->
+<?php
+require "./database/operations.php";
+require "../components/header.php";
+
+
+echo '
 
 <html>
     <head>
-        <style>
+
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <header>
+    '.getHeader("Weight Converter").'
+    </header>
+
+    <style>
             body{
                 background-color: white;
             }
@@ -79,7 +91,12 @@
                 font-weight: bold;
                 color: #1958BD;
             }
-
+            #btnSubmit{
+                margin-bottom: -30px;
+                height: 30px;
+                width: 75px;
+                margin-right: 10px;
+            }
 
         </style>
 
@@ -88,8 +105,8 @@
         function convert() {
             x = document.myform.userInput.value;
 
-            TypeOne = document.myform.firstType.value;
-            TypeTwo = document.myform.secondType.value;
+            TypeOne = document.myform.to_unit.value;
+            TypeTwo = document.myform.from_unit.value;
 
 
             if (TypeOne === "kilogram") {
@@ -133,12 +150,12 @@
 
         function switchPlaces() {
 
-            TypeOne = document.myform.firstType.value;
-            TypeTwo = document.myform.secondType.value;
+            TypeOne = document.myform.to_unit.value;
+            TypeTwo = document.myform.from_unit.value;
 
 
-            document.myform.firstType.value = TypeTwo;
-            document.myform.secondType.value = TypeOne;
+            document.myform.to_unit.value = TypeTwo;
+            document.myform.from_unit.value = TypeOne;
 
             convert();
 
@@ -158,10 +175,9 @@
     <div id="headerStyle"> WEIGHT CONVERTER </div>
 
 
-    <form name="myform">
+    <form name="myform" action="../database/operations.php">
         <table border="0" height="500" width="613" background="weight.png">
-
-
+        <input type="hidden" name="type" value="Weight">
 
 
             <tr height="320">
@@ -184,7 +200,7 @@
             <tr height="50">
 
                 <td width="230" align="right">
-            <input type="number" id="userInput" name="myNumber" onchange="convert()" placeholder="From"/>
+            <input type="number" id="userInput" name="to_value" onchange="convert()" placeholder="From"/>
 
             </td>
 
@@ -194,7 +210,7 @@
             </td>
 
             <td width="215">
-            <input  type="number" id="resultofConvert" name="mynumber2" placeholder="To"/>
+            <input  type="number" id="resultofConvert" name="from_value" placeholder="To"/>
 
             </td>
 
@@ -202,12 +218,10 @@
 
 
 
-
-
             <tr>
                 <td align="center" >
 
-                    <select name="firstType" id = "firstType" onchange="convert()">
+                    <select name="to_unit" id = "firstType" onchange="convert()">
                         <option value="kilogram"  id="kg"  >Kilogram [kg]</option>
                         <option value="gram"      id="g"   >Gram [g]</option>
                         <option value="miligram"  id="mg"  >Miligram [mg]</option>
@@ -220,10 +234,11 @@
 
                 <td align="center">
             <input type="button" id="btnConvert" value="CONVERT" onclick="convert()"/>
+            <input type="button" id="btnSubmit" value="SUBMIT" onclick=""/>
             </td>              
 
             <td>
-                <select name="secondType" id = "secondType" onchange="convert()" >
+                <select name="from_unit" id = "secondType" onchange="convert()" >
                     <option value="kilogram"  id="kg"  >Kilogram [kg]</option>
                     <option value="gram"      id="g"   >Gram [g]</option>
                     <option value="miligram"  id="mg"  >Miligram [mg]</option>
@@ -245,3 +260,6 @@
 </div>
 </body>
 </html>
+
+
+';
