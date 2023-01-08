@@ -1,4 +1,4 @@
-<!-- PROJECT -->
+<!<!-- PROJECT -->
 
 <html>
     <head>
@@ -6,38 +6,35 @@
             body{
                 background-color: white;
             }
-            input[type="text"]{
+            input[type="number"]{
                 background-color: #BFFCFE; /*transparent*/
                 color:black;
                 border-radius:20px;
                 border : 1;
                 border-color: #1B76BA;
-                height: 30;
-                width : 180;
-
+                height: 30px;
+                width : 180px;
             }
 
-            input[type="text"]:focus{
-                background-color: black;
-                color:white;
+            input[type="number"]:focus{
+                color: black;
             }
 
-            input[type="text"]:hover{
-                background-color: black;
-                color:white;
+            input[type="number"]:hover{
+                color:black;
             }
+
             input[type="button"]{
                 border-radius: 20px;
-                background-color: #db7f3d;
-                color: #1B76BA;
+                background-color: darkcyan;
+                color: white;
                 border: 0;
             }
             input[type="button"]:hover{
-                background-color: black; /*transparent*/
-                color: white;
+                background-color: darkcyan; /*transparent*/
+                color: #FFFF84;
                 border-radius:20px;
             }
-
 
             input[name="mynumber2"]{
                 margin-top:70px;
@@ -46,8 +43,8 @@
 
             #secondType{
                 border-radius: 20px;
-                background: #ccffff;
-                color:#000099;
+                background: #67E089;
+                color: black;
                 margin-left: 27px;
                 margin-top: 10px;
                 margin-bottom: 25px;
@@ -59,40 +56,49 @@
             }
             #firstType{
                 border-radius: 20px;
-                background: #ccffff;
-                color:#000099;
+                background: #FFFF84;
+                color: black;
                 margin-left:125px;
                 margin-bottom:30px;
+                margin-top:5px;
             }
             #btnConvert{
-                margin-top:20px; 
-                margin-left:135px;
+                margin-top:-10px;
+                margin-left:205px;
                 height: 40px;
                 width: 120px;
             }
             #btnSwitch{
                 margin-top: 10px;
-                margin-left:150px;
+                margin-left:220px;
                 height: 30px;
                 width: 90px;
             }
-
-
             option:checked{
                 color: white;
                 background-color: black;
             }
 
+            #resText{
+                color: darkcyan;
+                font-size: 20px;
+                font-style: italic;
+                padding-left: 35px;
+            }
+            #headerStyle{
+                font-size: 27px;
+                font-weight: bold;
+                color: darkslategray;
+            }
+            #userInput{
+                background-color: #FFFF84;
+            }
+            #result{
+                background-color: #67E089;
+            }
 
-            #note{
-                margin-top: -110;
-            }
-            #note2{
-                margin-bottom: 0;
-            }
-            #note3{
-                margin-bottom: 0;
-            }
+
+
 
 
         </style>
@@ -109,7 +115,7 @@
 
 
 
-            if (TypeOne === "cubicMeter") {
+            if (TypeOne === "cubicmeter") {
                 totalMililiter = x * 1000000;
             } else if (TypeOne === "liter") {
                 totalMililiter = x * 1000;
@@ -123,7 +129,7 @@
                 totalMililiter = x * 473.176473;
             }
 
-            if (TypeTwo === "cubicMeter") {
+            if (TypeTwo === "cubicmeter") {
                 result = totalMililiter / 1000000;
             } else if (TypeTwo === "liter") {
                 result = totalMililiter / 1000;
@@ -139,10 +145,10 @@
 
 
             document.myform.result.value = result;
-            document.getElementById("note").innerHTML = x + " " + TypeOne
+            document.getElementById("note").innerHTML = x + " " + TypeOne;
             document.getElementById("note2").innerHTML = " is equals ";
             document.getElementById("note3").innerHTML = result + " " + TypeTwo;
- 
+
 
         }
 
@@ -171,61 +177,55 @@
 
 
     <br><br>
-    VOLUME CONVERTER
+    <div id="headerStyle"> VOLUME CONVERTER </div>
+
 
     <form name="myform">
-        <table border="0" height="575" width="613" background="beher.png">
+        <table border="0" height="575" width="613" background="beher3.png">
+            <tr height="50" align="right">
 
+                <td width="350"></td>
 
-            <tr height="50" align="right" >
-
-
-            <td width="350">
-                
             <tr><td>
-            <input type="text" id="userInput" name="myNumber" onchange="convert()" placeholder="From"/>
+            <input type="number" id="userInput" name="myNumber" onchange="convert()" placeholder="From"/>
             <select name="firstType" id = "firstType" onchange="convert()">
-                        <option value="cubicMeter"  id="cubicM"   >Cubic meter [m&#179]</option>
-                        <option value="liter"   id="L"   >Liter [L]</option>
-                        <option value="mililiter"   id="ml"   >Mililiter [ml]</option>
-                        <option value="gallon"   id="gal"  >Gallon [gal]</option>
-                        <option value="quart"    id="qt"  >Quart [qt]</option>
-                        <option value="pint"   id="pt"  >Pint [pt]</option>
-                    </select>
-            </td></tr>
-            
-            <tr><td>
-            <input type="button" id="btnConvert" value="CONVERT" onclick="convert()"/>
-            
-            <input type="button" id="btnSwitch" value="SWITCH" onclick="switchPlaces()"/>
-            </td></tr>
-            
+                <option value="cubicmeter"  id="cubicM"   >Cubic meter [m&#179]</option>
+                <option value="liter"   id="L"   >Liter [L]</option>
+                <option value="mililiter"   id="ml"   >Mililiter [ml]</option>
+                <option value="gallon"   id="gal"  >Gallon [gal]</option>
+                <option value="quart"    id="qt"  >Quart [qt]</option>
+                <option value="pint"   id="pt"  >Pint [pt]</option>
+            </select>
             </td>
 
-
-
-
-
-            <td width="250">
+            <td id="resText" align="left">
             <div id="note"></div>
             <div id="note2"></div>
             <div id="note3"></div>
             </td>
 
-
             </tr>
+
+            <tr><td>
+            <input type="button" id="btnConvert" value="CONVERT" onclick="convert()"/>
+
+            <input type="button" id="btnSwitch" value="SWITCH" onclick="switchPlaces()"/>
+            </td></tr>
+
+
+
 
 
             <tr>
-                <td>               
-                </td>
+
+                <td></td>
 
                 <td>
 
-            <input  type="text" id="result" name="mynumber2" placeholder="To" />
+            <input type="number" id="result" name="mynumber2" placeholder="To" />
 
             <select name="secondType" id = "secondType" onchange="convert()" >
-                <option value="cubicMeter"  id="cubicM"   >Cubic meter [m&#179]</option>
+                <option value="cubicmeter"  id="cubicM"   >Cubic meter [m&#179]</option>
                 <option value="liter"   id="L"   >Liter [L]</option>
                 <option value="mililiter"   id="ml"   >Mililiter [ml]</option>
                 <option value="gallon"   id="gal"  >Gallon [gal]</option>

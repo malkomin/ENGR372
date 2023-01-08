@@ -10,28 +10,26 @@
                 background-color: #BFFCFE; /*transparent*/
                 color:black;
                 border-radius:20px;
-                border : 1px;
+                border : 1;
                 border-color: #1B76BA;
                 height: 30px;
                 width : 180px;
-               
             }
 
             input[type="number"]:focus{
                 background-color: black;
                 color:white;
             }
-
             input[type="number"]:hover{
                 background-color: black;
                 color:white;
             }
+
             input[type="button"]{
                 border-radius: 20px;
                 background-color: white;
                 color: #1B76BA;
                 border: 0;
-                
             }
             input[type="button"]:hover{
                 background-color: black; /*transparent*/
@@ -43,25 +41,25 @@
                 background: #ccffff;
                 color:#000099;
                 margin-top: -65px;
-                margin-left: 45px;   
+                margin-left: 45px;
             }
             option:checked{
                 color: white;
                 background-color: black;
             }
-                        
+
             #btnConvert{
                 margin-right: 10px;
                 height: 40px;
-                width: 120px;              
+                width: 120px;
             }
             #btnSwitch{
                 margin-left: 27px;
                 height: 30px;
-                width: 90px;                
+                width: 90px;
             }
             #note{
-                margin-top: -110px;
+                margin-top: -120px;
             }
             #note2{
                 margin-bottom: 0;
@@ -70,9 +68,21 @@
                 margin-bottom: 0;
             }
 
+            #resText{
+                color: #1B76BA;
+                font-style: italic;
+                font-weight: bold;
+                font-size: 20px;
+            }
+            #headerStyle{
+                font-size: 27px;
+                font-weight: bold;
+                color: #1958BD;
+            }
+
 
         </style>
-        
+
     <script>
 
         function convert() {
@@ -109,32 +119,32 @@
             } else if (TypeTwo === "ounce") {
                 result = totalGrams * 0.035273962;
             }
-            
-               
+
+
 
             document.myform.resultofConvert.value = result;
             document.getElementById("note").innerHTML = x + " " + TypeOne;
-            document.getElementById("note2").innerHTML =" is equals ";
-            document.getElementById("note3").innerHTML =result + " " + TypeTwo;
+            document.getElementById("note2").innerHTML = " is equals ";
+            document.getElementById("note3").innerHTML = result + " " + TypeTwo;
 
 
         }
-        
-        
-        function switchPlaces(){
-            
+
+
+        function switchPlaces() {
+
             TypeOne = document.myform.firstType.value;
             TypeTwo = document.myform.secondType.value;
-            
-            
+
+
             document.myform.firstType.value = TypeTwo;
             document.myform.secondType.value = TypeOne;
-            
+
             convert();
-   
+
         }
-        
-  
+
+
     </script>
 
 
@@ -145,10 +155,11 @@
 
 
     <br><br>
-    WEIGHT CONVERTER
+    <div id="headerStyle"> WEIGHT CONVERTER </div>
+
 
     <form name="myform">
-        <table border="0" height="500" width="613" background="weight.png">
+        <table border="0" height="500" width="613" background="tarti2.png">
 
 
 
@@ -156,15 +167,15 @@
             <tr height="320">
                 <td>
                 </td>
-                
-                <td align="center">
-                    <div id="note"></div>
-                    <div id="note2"></div>
-                    <div id="note3"></div>
-                </td>
-                
-                <td>
-                </td>
+
+                <td align="center" id="resText">
+            <div id="note"></div>
+            <div id="note2"></div>
+            <div id="note3"></div>
+            </td>
+
+            <td>
+            </td>
 
 
             </tr>
@@ -173,19 +184,19 @@
             <tr height="50">
 
                 <td width="230" align="right">
-                    <input type="number" id="userInput" name="myNumber" onchange="convert()" placeholder="From"/>
-                       
-                </td>
-                
-                
-                <td>
-                     <input type="button" id="btnSwitch" value="SWITCH" onclick="switchPlaces()"/>
-                </td>
-            
-                <td width="215">
-                <input  type="number" id="resultofConvert" name="mynumber2" placeholder="To"/>
-                
-                </td>
+            <input type="number" id="userInput" name="myNumber" onchange="convert()" placeholder="From"/>
+
+            </td>
+
+
+            <td>
+            <input type="button" id="btnSwitch" value="SWITCH" onclick="switchPlaces()"/>
+            </td>
+
+            <td width="215">
+            <input  type="number" id="resultofConvert" name="mynumber2" placeholder="To"/>
+
+            </td>
 
             </tr>
 
@@ -195,34 +206,34 @@
 
             <tr>
                 <td align="center" >
-                    
-                     <select name="firstType" id = "firstType" onchange="convert()">
-                            <option value="kilogram"  id="kg"  >Kilogram [kg]</option>
-                            <option value="gram"      id="g"   >Gram [g]</option>
-                            <option value="miligram"  id="mg"  >Miligram [mg]</option>
-                            <option value="ton"       id="t"   >Ton(metric) [t]</option>
-                            <option value="pound"     id="lbs"  >Pound [lbs]</option>
-                            <option value="ounce"     id="oz"   >Ounce [oz]</option>
-                        </select>   
-                    
-                </td>
-                                
-                <td align="center">
-                     <input type="button" id="btnConvert" value="CONVERT" onclick="convert()"/>
-                </td>              
-                
-                <td>
-                       <select name="secondType" id = "secondType" onchange="convert()" >
+
+                    <select name="firstType" id = "firstType" onchange="convert()">
                         <option value="kilogram"  id="kg"  >Kilogram [kg]</option>
                         <option value="gram"      id="g"   >Gram [g]</option>
                         <option value="miligram"  id="mg"  >Miligram [mg]</option>
                         <option value="ton"       id="t"   >Ton(metric) [t]</option>
                         <option value="pound"     id="lbs"  >Pound [lbs]</option>
                         <option value="ounce"     id="oz"   >Ounce [oz]</option>
-                    </select> 
-                    
+                    </select>   
+
                 </td>
-                
+
+                <td align="center">
+            <input type="button" id="btnConvert" value="CONVERT" onclick="convert()"/>
+            </td>              
+
+            <td>
+                <select name="secondType" id = "secondType" onchange="convert()" >
+                    <option value="kilogram"  id="kg"  >Kilogram [kg]</option>
+                    <option value="gram"      id="g"   >Gram [g]</option>
+                    <option value="miligram"  id="mg"  >Miligram [mg]</option>
+                    <option value="ton"       id="t"   >Ton(metric) [t]</option>
+                    <option value="pound"     id="lbs"  >Pound [lbs]</option>
+                    <option value="ounce"     id="oz"   >Ounce [oz]</option>
+                </select> 
+
+            </td>
+
             </tr>
 
 
