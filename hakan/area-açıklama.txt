@@ -1,0 +1,1 @@
+This page is the area converter page. It acts in the same way the length calculator page does in function and form. However the obvious difference being is that this page converts area units.
