@@ -1,5 +1,6 @@
-<!<!-- PROJECT -->
-
+<?php
+require '../components/header.php';
+echo '
 <html>
     <head>
         <style>
@@ -168,7 +169,9 @@
 
 
     </script>
-
+    <header>
+    '.getHeader("Weight Converter").'
+    </header>
 
 </head>
 <body>
@@ -179,8 +182,7 @@
     <br><br>
     <div id="headerStyle"> VOLUME CONVERTER </div>
 
-
-    <form name="myform">
+    <form name="myform" action="../database/operations.php" method="post">
         <table border="0" height="575" width="613" background="beher.png">
             <tr height="50" align="right">
 
@@ -223,7 +225,6 @@
                 <td>
 
             <input type="number" id="result" name="mynumber2" placeholder="To" />
-
             <select name="secondType" id = "secondType" onchange="convert()" >
                 <option value="cubicmeter"  id="cubicM"   >Cubic meter [m&#179]</option>
                 <option value="liter"   id="L"   >Liter [L]</option>
@@ -244,4 +245,4 @@
 
 </div>
 </body>
-</html>
+</html>';

@@ -1,6 +1,6 @@
 <?php
-require "././database/operations.php";
-require "././components/header.php";
+require "../database/operations.php";
+require "../components/header.php";
 echo'
 <html>
     <head>
@@ -116,11 +116,11 @@ echo'
     
     <body>
         <br>
-        <form name="myform">
+        <form name="myform" method="post" action="../database/operations.php">
         <div align="center">
         <h1 class="calculator-title">Area Calculator</h1>
         <br>
-
+        <input type="hidden" name="type" value="area">
         <table class="area" width="781" height="113" border="0" bordercolor="black" background="images/area.jpg">
             <tr>
                 <td align="center" valign="bottom"><input type="number" placeholder="From" id="input" name="from_value"></td><td align="center" valign="bottom">&#8594&#8594</td>

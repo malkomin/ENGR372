@@ -1,5 +1,5 @@
 <?php
-require "./components/header.php";
+require "../components/header.php";
 
 
 echo '
@@ -8,8 +8,7 @@ echo '
   <meta charset="UTF-8">
   <title>Angle Converter</title>
 
-
-  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="/ENGR-372/ENGR372/zeynep/main.css">
 
   ' . getHeader("Angle Converter") . '
 </head>
@@ -24,8 +23,7 @@ echo '
   </div>
 
   <div class="converter-body" >
-  require "././database/operations.php";
-  <form name="myform" action="../database/operations.php">
+  <form name="myform" action="../database/operations.php" method="post">
     <h1 class="converter-title">Angle Converter</h1>
 
     <input type="text" placeholder="Input" id="input" name="from_value">

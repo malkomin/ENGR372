@@ -1,6 +1,5 @@
 <?php
-require "././database/operations.php";
-require "././components/header.php";
+require "../components/header.php";
 echo'
 <html>
     <head>
@@ -114,7 +113,7 @@ echo'
     </head>
     <body>
         <br>
-        <form name="myform" action="../database/operations.php"><input type="hidden" name="type" value="Length">
+        <form name="myform" action="../database/operations.php" method="post"><input type="hidden" name="type"  value="Length">
         <div align="center">
         <h1 class="calculator-title">Length Calculator</h1>
         <br>
