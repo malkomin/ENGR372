@@ -8,11 +8,11 @@ echo '
 <title>Dashboard</title>
 </head>
 <header>
-' . getHeader("Anasayfa") . '
+' . getHeader("speed") . '
 </header>
 <body>
     <form name="myform" action="../database/operations.php">
-    <input type="hidden" name="type" value="Speed">
+    <input type="hidden" name="type" value="speed">
         <div>
             <style>
                
