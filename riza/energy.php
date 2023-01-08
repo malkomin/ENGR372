@@ -1,4 +1,5 @@
 <?php
+require './components/header.php';
 require "../components/header.php";
 echo '
 <html>
@@ -7,11 +8,11 @@ echo '
 <title>Dashboard</title>
 </head>
 <header>
-' . getHeader("force") . '
+' . getHeader("energy") . '
 </header>
 <body>
-    <form name="myform" action="../database/operations.php" method="post">
-    <input type="hidden" name="type" value="force">
+    <form name="myform" action="../database/operations.php">
+    <input type="hidden" name="type" value="energy">
         <div>
             <table id="table" width="949" height="700" background="power.png" border="0"  >
 
@@ -34,11 +35,9 @@ echo '
                 <tr>
                     <td width="409" height="50"></td>
                     <td width="50"><div>Power:</div></td>
-                <td width="75"><label for="power"></label>
-                <input type="text" name="from_value" id="power" style="width:70px; height:20px;" oninput="convert()" ></td>
+                <td width="75"><label for="power"></label><input type="text" name="from_value" id="power" style="width:70px; height:20px;" oninput="convert()" ></td>
                     <td width="15"><div>Sonuç:</div></td>
-                    <td width="100"><label for="result"></label>
-                    <input type="text" name="to_value" readonly id="result"></td>
+                    <td width="100"><label for="result"></label><input type="text" name="to_value" id="result"></td>
                     <td width="400"></td>
                     </tr>
                     <tr>
@@ -51,11 +50,8 @@ echo '
                                 <option value="megawatts">Petawatt</option>
                                 <option value="joules">Terawatt</option>
                                 <option value="kilojoules">Gigawatt</option>
-                            </select>
-                            </td>
-                        <td width="15">
-                        
-</td>
+                            </select></td>
+                        <td width="15"></td>
                         <td width="100">
                             <select id="result-unit" name="to_unit" size="5" onchange="convert()" class="select">
                                 <option value="watts" selected="">Watt</option>
@@ -63,15 +59,13 @@ echo '
                                 <option value="megawatts">Petawatt</option>
                                 <option value="joules">Terawatt</option>
                                 <option value="kilojoules">Gigawatt</option>
-                            </select>
-                            </td>
+                            </select></td>
                         <td width="400"></td>
                     </tr>
                     <tr>
                         <td width="409"  height="100"></td>
                         <td width="50"></td>
-                        <td width="75">
-        <input type="submit" value="Kaydet"></td>
+                        <td width="75"></td>
                         <td width="15"></td>
                         <td width="100"></td>
                         <td width="400"></td>
@@ -86,6 +80,7 @@ echo '
                     </tr>
             </table>
         </div>
+
     </form>
 <script>
     function convert() {
@@ -100,61 +95,61 @@ var result = 0;
             if (resultUnit == "watts") {
                 result = power + " watts";
             } else if (resultUnit == "kilowatts") {
-                result = (power * 1.60934);
+                result = (power * 0.001);
             } else if (resultUnit == "megawatts") {
-                result = power + " watts = " + (power * 0.44704) + " megawatts";
+                result = (power * 0.000001);
             } else if (resultUnit == "joules") {
-                result = power + " watts = " + (power * 1.466667) + " joules";
+                result = (power * 3600) ;
             } else if (resultUnit == "Kilojoule") {
-                result = power + " watts = " + (power * 0.868976) + " Kilojoule";
+                result = (power * 3.6);
             }
         } else if (unit == "kilowatts") {
             if (resultUnit == "watts") {
-                result = power + " kilowatts = " + (power * 0.621371) + " watts";
+                result =(power * 1000) ;
             } else if (resultUnit == "kilowatts") {
-                result = power + " kilowatts";
+                result = power ;
             } else if (resultUnit == "megawatts") {
-                result = power + " kilowatts = " + (power * 0.277778) + " megawatts";
+                result = (power * 0.001) ;
             } else if (resultUnit == "joules") {
-                result = power + " kilowatts = " + (power * 0.911344) + " joules";
+                result = (power * 3600000);
             } else if (resultUnit == "Kilojoule") {
-                result = power + " kilowatts = " + (power * 0.539957) + " Kilojoule";
+                result = (power * 3600) ;
             }
         } else if (unit == "megawatts") {
             if (resultUnit == "watts") {
-                result = power + " megawatts = " + (power * 2.236936) + " watts";
+                result =  (power * 1000000);
             } else if (resultUnit == "kilowatts") {
-                result = power + " megawatts = " + (power * 3.6) + " kilowatts";
+                result =(power * 1000);
             } else if (resultUnit == "megawatts") {
-                result = power + " megawatts";
+                result = power ;
             } else if (resultUnit == "joules") {
-                result = power + " megawatts = " + (power * 3.28084) + " joules";
+                result = (power * 3600000000) ;
             } else if (resultUnit == "Kilojoule") {
-                result = power + " megawatts = " + (power * 1.943844) + " Kilojoule";
+                result = (power * 3600000) ;
             }
         } else if (unit == "joules") {
             if (resultUnit == "watts") {
-                result = power + " joules = " + (power * 0.681818) + " watts";
+                result = power (power * 0.0002777778);
             } else if (resultUnit == "kilowatts") {
-                result = power + " joules = " + (power * 1.09728) + " kilowatts";
+                result = (power * 0.0000002777778);
             } else if (resultUnit == "megawatts") {
-                result = power + " joules = " + (power * 0.3048) + " megawatts";
+                result =,(power * 0.0000000002777778),;
             } else if (resultUnit == "joules") {
-                result = power + " joules";
+                result = power ,;
             } else if (resultUnit == "Kilojoule") {
-                result = power + " joules = " + (power * 0.592484) + " Kilojoule";
+                result =,(power * 0.001),;
             }
         } else if (unit == "Kilojoule") {
             if (resultUnit == "watts") {
-                result = power + " Kilojoule = " + (power * 1.150779) + " watts";
+                result =(power * 0.2777777778);
             } else if (resultUnit == "kilowatts") {
-                result = power + " Kilojoule = " + (power * 1.852) + " kilowatts";
+                result = (power * 0.0002777778) ;
             } else if (resultUnit == "megawatts") {
-                result = power + " Kilojoule = " + (power * 0.514444) + " megawatts";
+                result = (power * 0.00000002777778);
             } else if (resultUnit == "joules") {
-                result = power + " Kilojoule = " + (power * 1.687809) + " joules";
-            } else if (resultUnit == "knot") {
-                result = power + " Kilojoule";
+                result = (power * 1000) ;
+            } else if (resultUnit == "Kilojuole") {
+                result = power;
             }
         }
 console.log(result);
