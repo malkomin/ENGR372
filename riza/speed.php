@@ -1,5 +1,6 @@
 <?php
 require './components/header.php';
+require "././database/operations.php";
 echo '
 <html>
     <head>
