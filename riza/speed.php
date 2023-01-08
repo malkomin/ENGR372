@@ -1,10 +1,16 @@
-<!DOCTYPE html>
+<?php
+echo '
 <html>
     <head>
-    <title>Speed Convertor</title>
+<meta charset="UTF-8">
+<title>Dashboard</title>
 </head>
+<header>
+' . getHeader("Anasayfa") . '
+</header>
 <body>
-    <form>
+    <form name="myform" action="../database/operations.php">
+    <input type="hidden" name="type" value="Speed">
         <div>
             <style>
                
@@ -49,16 +55,16 @@
                 <tr>
                     <td width="620" height="50"></td>
                     <td width="30"><div>Hız:</div></td>
-                    <td width="100"><label for="speed"></label><input type="text" id="speed" oninput="convert()" style="width:100px; height:20px;" ></td>
+                    <td width="100"><label for="speed"></label><input type="text" name="from_value" id="speed" oninput="convert()" style="width:100px; height:20px;" ></td>
                     <td width="10"></td>
-                    <td width="100"><label for="result">Sonuç:</label><output color="white" type="text" id="result"></td>
+                    <td width="100"><label for="result">Sonuç:</label><output color="white" type="text" name="to_value" id="result"></td>
                     <td width="640"></td>
                     </tr>
                     <tr>
                         <td width="620" height="50"></td>
                         <td width="30"></td>
                         <td width="100">
-                            <select id="unit" size="5" onchange="convert()" class="select">
+                            <select id="unit" name="from_unit" size="5" onchange="convert()" class="select">
                                 <option value="mph" selected="">Mil/saat (mph)</option>
                                 <option value="kph">Kilometre/saat (kph)</option>
                                 <option value="mps">Metre/saniye (m/s)</option>
@@ -67,7 +73,7 @@
                             </select></td>
                         <td width="10"></td>
                         <td width="100">
-                            <select id="result-unit" size="5" onchange="convert()" class="select">
+                            <select id="result-unit" name="to_unit" size="5" onchange="convert()" class="select">
                                 <option value="mph" selected="">Mil/saat (mph)</option>
                                 <option value="kph">Kilometre/saat (kph)</option>
                                 <option value="mps">Metre/saniye (m/s)</option>
@@ -171,3 +177,4 @@
 </script>
 </body>
 </html>
+';

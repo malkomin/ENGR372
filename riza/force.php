@@ -1,10 +1,16 @@
-<!DOCTYPE html>
+<?php
+echo '
 <html>
     <head>
-    <title>Power Convertor</title>
+<meta charset="UTF-8">
+<title>Dashboard</title>
 </head>
+<header>
+' . getHeader("Anasayfa") . '
+</header>
 <body>
-    <form>
+    <form name="myform" action="../database/operations.php">
+    <input type="hidden" name="type" value="Force">
         <div>
             <table id="table" width="949" height="700" background="power.png" border="0"  >
 
@@ -27,16 +33,16 @@
                 <tr>
                     <td width="409" height="50"></td>
                     <td width="50"><div>Power:</div></td>
-                <td width="75"><label for="power"></label><input type="text" id="power" style="width:70px; height:20px;" oninput="convert()" ></td>
+                <td width="75"><label for="power"></label><input type="text" name="from_value" id="power" style="width:70px; height:20px;" oninput="convert()" ></td>
                     <td width="15"><div>Sonuç:</div></td>
-                    <td width="100"><label for="result"></label><input type="text" id="result"></td>
+                    <td width="100"><label for="result"></label><input type="text" name="to_value" id="result"></td>
                     <td width="400"></td>
                     </tr>
                     <tr>
                         <td width="409" height="50"></td>
                         <td width="50"></td>
                         <td width="75">
-                            <select id="unit" size="5" onchange="convert()" class="select">
+                            <select id="unit" name="from_unit" size="5" onchange="convert()" class="select">
                                 <option value="watts" selected="">Watt</option>
                                 <option value="kilowatts">Exawatt</option>
                                 <option value="megawatts">Petawatt</option>
@@ -45,7 +51,7 @@
                             </select></td>
                         <td width="15"></td>
                         <td width="100">
-                            <select id="result-unit" size="5" onchange="convert()" class="select">
+                            <select id="result-unit" name="to_unit" size="5" onchange="convert()" class="select">
                                 <option value="watts" selected="">Watt</option>
                                 <option value="kilowatts">Exawatt</option>
                                 <option value="megawatts">Petawatt</option>
@@ -150,3 +156,4 @@ console.log(result);
 </script>
 </body>
 </html>
+';
