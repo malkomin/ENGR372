@@ -4,7 +4,7 @@
         <title>Length Calculator</title>
         <style>
             body{
-                background-color: yellowgreen;
+                background-image: url("images/BG.jpg");
             }
             input:focus{
                 background-color: #e9b764;
@@ -25,11 +25,18 @@
                 width: 20ch;
             }
             td{
-                font-size: 23px;
+                font-size: 20px;
             }
             input,select{
                 width: 20ch;
                 border-radius: 8px;
+            }
+            li,h1,h4{
+                font-family:"verdana";
+            }
+            table.conversion{
+                border: 5px solid red;
+                border-radius: 30px;
             }
         </style>
         <script>
@@ -108,22 +115,53 @@
                 <td height="30" align="center" valign="top"><select name="from" id="from">
                     <option value="m">Meter(m)</option>
                     <option value="km">Kilometer(km)</option>
-                    <option value="mm">Milimeter(mm)</option>
+                    <option value="mm">Millimeter(mm)</option>
                     <option value="in">Inches(in)</option>
                     <option value="ft">Feet(ft)</option></select></td>
                 <td align="center" valign="top">&#8594&#8594</td>
                 <td align="center" valign="top"><select name="to" id="to">
                     <option value="m">Meter(m)</option>
                     <option value="km">Kilometer(km)</option>
-                    <option value="mm">Milimeter(mm)</option>
+                    <option value="mm">Millimeter(mm)</option>
                     <option value="in">Inches(in)</option>
                     <option value="ft">Feet(ft)</option></select></td>
                 <td align="left" valign="top"><input type="button" value="  CALCULATE  " onclick="calculate()"></td>
             </tr>
         </table>
         <br>
-        <table width="800" height="2000" border="1" bordercolor="black" style="background-color:#FFFFFF">
-            <tr><td></td></tr>
+        <table class="conversion" width="800" height="800" border="0" bordercolor="black" style="background-color:#FFFFFF">
+            <tr>
+                <td div align="center" height="50"><h4>Conversion table for every unit:</h4></td>
+            </tr>
+            <tr>
+                <td div align="left" height="50"><ul style="list-style-type:disc;"><li>1 meter = 0.001 kilometer</li>
+                    <li>1 meter = 1 meter</li>
+                    <li>1 meter = 1000 millimeter</li>
+                    <li>1 meter = 39.37 inches</li>
+                    <li>1 meter = 3.28 feet</li>
+                    <li>1 kilometer = 1 kilometer</li>
+                    <li>1 kilometer = 1000 meter</li>
+                    <li>1 kilometer = 1000000 millimeter</li>
+                    <li>1 kilometer = 39370 inches</li>
+                    <li>1 kilometer = 3280 feet</li>
+                    <li>1 millimeter = 0.000001 kilometer</li>
+                    <li>1 millimeter = 0.001 meter</li>
+                    <li>1 millimeter = 1 millimeter</li>
+                    <li>1 millimeter = 0.03937 inches</li>
+                    <li>1 millimeter = 0.00328 feet</li>
+                    <li>1 inch = 0.0254 meter</li>
+                    <li>1 inch = 0.0000254 kilometer</li>
+                    <li>1 inch = 25.4 milimeter</li>
+                    <li>1 inch = 1 inch</li>
+                    <li>1 inch = 0.083 feet</li>
+                    <li>1 foot = 0.3048 meter</li>
+                    <li>1 foot = 0.0003048 kilometer</li>
+                    <li>1 foot = 304.8 millimeter</li>
+                    <li>1 foot = 12 inches</li>
+                    <li>1 foot = 1 foot</li>
+                </ul></td>
+            </tr>
+            <tr></tr>
         </table>
     </body>
 </html>
