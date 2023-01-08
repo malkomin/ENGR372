@@ -1,7 +1,14 @@
+<?php
+require "././database/operations.php";
+require "././components/header.php";
+echo'
 <html>
     <head>
         <meta charset="UTF-8">
         <title>Length Calculator</title>
+        <header>
+        '.getHeader("Length Calculator").'
+        </header>
         <style>
             body{
                 background-image: url("images/BG.jpg");
@@ -26,6 +33,9 @@
             }
             td{
                 font-size: 20px;
+            }
+            input[type="submit"]:hover{
+                background-color: #e9b764;
             }
             input,select{
                 width: 20ch;
@@ -104,25 +114,25 @@
     </head>
     <body>
         <br>
-        <form name="myform">
+        <form name="myform" action="../database/operations.php"><input type="hidden" name="type" value="Length">
         <div align="center">
         <h1 class="calculator-title">Length Calculator</h1>
         <br>
     
-        <table width="781" height="113" border="0" bordercolor="black" background="images/ruler.png">
+        <table width="781" height="113" border="1" bordercolor="black" background="images/ruler.png">
             <tr>
-                <td align="center" valign="bottom"><input type="number" placeholder="From" id="input" name="input"></td><td align="center" valign="bottom">&#8594&#8594</td>
-                <td align="center" valign="bottom"><input type="number" placeholder="To" name="result" id="result"></td><td></td>
+                <td align="center" valign="bottom"><input type="number" placeholder="From" id="input" name="from_value"></td><td align="center" valign="bottom">&#8594&#8594</td>
+                <td align="center" valign="bottom"><input type="number" placeholder="To" name="to_value" id="result"></td><td div align="left" valign="bottom"><input type="submit" value="SUBMIT"></td>
             </tr>
             <tr>
-                <td height="30" align="center" valign="top"><select name="from" id="from">
+                <td height="30" align="center" valign="top"><select name="from_unit" id="from">
                     <option value="m">Meter(m)</option>
                     <option value="km">Kilometer(km)</option>
                     <option value="mm">Millimeter(mm)</option>
                     <option value="in">Inches(in)</option>
                     <option value="ft">Feet(ft)</option></select></td>
                 <td align="center" valign="top">&#8594&#8594</td>
-                <td align="center" valign="top"><select name="to" id="to">
+                <td align="center" valign="top"><select name="to_unit" id="to">
                     <option value="m">Meter(m)</option>
                     <option value="km">Kilometer(km)</option>
                     <option value="mm">Millimeter(mm)</option>
@@ -166,5 +176,6 @@
             </tr>
             <tr></tr>
         </table>
+    </form>
     </body>
-</html>
+</html>';
