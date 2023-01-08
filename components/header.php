@@ -43,7 +43,7 @@ function getHeader($pageName)
         <a class="nav-link" href="/ENGR-372/ENGR372/omer/weightConverter.php">Ağırlık</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/ENGR-372/ENGR372/riza/force.php">Güç</a>
+        <a class="nav-link" href="/ENGR-372/ENGR372/riza/energy.php">Güç</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/ENGR-372/ENGR372/riza/speed.php">Hız</a>
