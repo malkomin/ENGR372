@@ -28,34 +28,34 @@ function getHeader($pageName)
         echo '
         <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="/ENGR-372/ENGR372/dashboard.php">Hesap Makinesi<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/dashboard.php">Hesap Makinesi<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/ENGR-372/ENGR372/hakan/area.php">Alan</a>
+        <a class="nav-link" href="/hakan/area.php">Alan</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/ENGR-372/ENGR372/hakan/length.php">Uzunluk</a>
+        <a class="nav-link" href="/hakan/length.php">Uzunluk</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/ENGR-372/ENGR372/omer/volumeConverter.php">Hacim</a>
+        <a class="nav-link" href="/omer/volumeConverter.php">Hacim</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/ENGR-372/ENGR372/omer/weightConverter.php">Ağırlık</a>
+        <a class="nav-link" href="/omer/weightConverter.php">Ağırlık</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/ENGR-372/ENGR372/riza/energy.php">Güç</a>
+        <a class="nav-link" href="/riza/energy.php">Güç</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/ENGR-372/ENGR372/riza/speed.php">Hız</a>
+        <a class="nav-link" href="/riza/speed.php">Hız</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/ENGR-372/ENGR372/zeynep/angleConverter.php">Açı</a>
+        <a class="nav-link" href="/zeynep/angleConverter.php">Açı</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/ENGR-372/ENGR372/zeynep/timeConverter.php">Zaman</a>
+        <a class="nav-link" href="/zeynep/timeConverter.php">Zaman</a>
       </li>
       <li class="nav-item ">
-        <a class="nav-link" href="/ENGR-372/ENGR372/logout.php">Çıkış</a>
+        <a class="nav-link" href="/logout.php">Çıkış</a>
       </li>
     </ul>
     
