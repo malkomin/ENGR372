@@ -37,6 +37,18 @@ echo '
                 border-radius:20px;
             }
 
+            input[type="submit"]{
+                border-radius: 20px;
+                background-color: darkcyan;
+                color: white;
+                border: 0;
+            }
+            input[type="submit"]:hover{
+                background-color: darkcyan; /*transparent*/
+                color: #FFFF84;
+                border-radius:20px;
+            }
+
             input[name="from_value"]{
                 margin-top:70px;
                 margin-right: 77px;

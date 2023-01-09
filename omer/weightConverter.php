@@ -47,6 +47,17 @@ echo '
                 color: white;
                 border-radius:20px;
             }
+            input[type="submit"]{
+                border-radius: 20px;
+                background-color: white;
+                color: #1B76BA;
+                border: 0;
+            }
+            input[type="submit"]:hover{
+                background-color: black; /*transparent*/
+                color: white;
+                border-radius:20px;
+            }
             select{
                 border-radius: 20px;
                 background: #ccffff;
