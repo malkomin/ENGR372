@@ -5,6 +5,130 @@ require "../components/header.php";
 echo '
 <html>
 <head>
+<style>
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+
+.converter-body{
+  align-content: center;
+  align-items: center;
+  width: 400px;
+  height: 200px;
+  position: absolute;
+  top: 50%;
+  left: 38%;
+  transform: translate(-50%,-50%);
+  box-shadow: 0 0 2px 1px #cacaca;
+  background: #7d7d7d;
+  -moz-border-radius: 25px / 25px;
+  -webkit-border-radius: 25px / 25px;
+  border-radius: 25px / 25px;
+}
+
+#image1{
+  -moz-border-radius: 25px / 25px;
+  -webkit-border-radius: 25px / 25px;
+  border-radius: 25px / 25px;
+}
+
+.image-arrow{
+  top: 50px;
+  left: 400px;
+  position: absolute;
+}
+
+.image-angle{
+  top: -258px;
+  left: -150px;
+  position: relative;
+}
+
+.image-time{
+  position: absolute;
+  top: 100px;
+  left: 150px;
+}
+
+.converter-title{
+  text-align: center;
+  margin-top: 0px;
+  font-size: 40px;
+}
+
+input{
+  height: 35px;
+  text-align: center;
+  border: 1px solid black;
+}
+
+#equal{
+  margin-left: 153px;
+}
+
+#input{
+  margin-left: 25px;
+  margin-bottom: 500px;
+  -moz-border-radius: 25px / 25px;
+  -webkit-border-radius: 25px / 25px;
+  border-radius: 25px / 25px;
+}
+
+#result{
+  margin-left: 200px;
+  margin-top: -535px;
+  -moz-border-radius: 25px / 25px;
+  -webkit-border-radius: 25px / 25px;
+  border-radius: 25px / 25px;
+}
+
+
+#inputType{
+  text-align: center;
+  width: 158px;
+  height: 35px;
+  margin-left: 30px;
+  margin-top: -500px;
+  color: #7d64ff;
+  border: 1px solid black;
+  -moz-border-radius: 25px / 25px;
+  -webkit-border-radius: 25px / 25px;
+  border-radius: 25px / 25px;
+}
+#resultType{
+  text-align: center;
+  width: 158px;
+  height: 35px;
+  margin-left: 205px;
+  margin-top: -500px;
+  color: #7d64ff;
+  border: 1px solid black;
+  -moz-border-radius: 25px / 25px;
+  -webkit-border-radius: 25px / 25px;
+  border-radius: 25px / 25px;
+}
+
+#Save{
+    margin-top:-460px;
+    margin-left: 35px;
+}
+
+
+
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+</style>
 
   <link rel="stylesheet" href="main.css">
   ' . getHeader("Angle Converter") . '
