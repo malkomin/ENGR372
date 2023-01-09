@@ -230,7 +230,7 @@ echo '
             <input type="button" id="btnConvert" value="CONVERT" onclick="convert()"/>
 
             <input type="button" id="btnSwitch" value="SWITCH" onclick="switchPlaces()"/>
-
+            <input type="hidden" name="type" value="Volume" />
             <input type="submit" id="btnSubmit" value="SUBMIT" />
             </td></tr>
 
