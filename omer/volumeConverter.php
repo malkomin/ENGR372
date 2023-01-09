@@ -37,12 +37,12 @@ echo '
                 border-radius:20px;
             }
 
-            input[name="mynumber2"]{
+            input[name="from_value"]{
                 margin-top:70px;
                 margin-right: 77px;
             }
 
-            #secondType{
+            #to_unit{
                 border-radius: 20px;
                 background: #67E089;
                 color: black;
@@ -51,11 +51,11 @@ echo '
                 margin-bottom: 25px;
             }
 
-            input[name="myNumber"]{
+            input[name="to_value"]{
                 margin-top:45px;
                 margin-left: 90px;
             }
-            #firstType{
+            #from_unit{
                 border-radius: 20px;
                 background: #FFFF84;
                 color: black;
@@ -115,8 +115,8 @@ echo '
         function convert() {
             x = document.myform.userInput.value;
 
-            TypeOne = document.myform.firstType.value;
-            TypeTwo = document.myform.secondType.value;
+            TypeOne = document.myform.from_unit.value;
+            TypeTwo = document.myform.to_unit.value;
 
 
 
@@ -162,12 +162,12 @@ echo '
 
         function switchPlaces() {
 
-            TypeOne = document.myform.firstType.value;
-            TypeTwo = document.myform.secondType.value;
+            TypeOne = document.myform.from_unit.value;
+            TypeTwo = document.myform.to_unit.value;
 
 
-            document.myform.firstType.value = TypeTwo;
-            document.myform.secondType.value = TypeOne;
+            document.myform.from_unit.value = TypeTwo;
+            document.myform.to_unit.value = TypeOne;
 
             convert();
 
@@ -195,8 +195,8 @@ echo '
                 <td width="350"></td>
 
             <tr><td>
-            <input type="number" id="userInput" name="myNumber" onchange="convert()" placeholder="From"/>
-            <select name="firstType" id = "firstType" onchange="convert()">
+            <input type="number" id="userInput" name="to_value" onchange="convert()" placeholder="From"/>
+            <select name="from_unit" id = "from_unit" onchange="convert()">
                 <option value="cubicmeter"  id="cubicM"   >Cubic meter [m&#179]</option>
                 <option value="liter"   id="L"   >Liter [L]</option>
                 <option value="mililiter"   id="ml"   >Mililiter [ml]</option>
@@ -219,7 +219,7 @@ echo '
 
             <input type="button" id="btnSwitch" value="SWITCH" onclick="switchPlaces()"/>
 
-            <input type="button" id="btnSubmit" value="SUBMIT" onclick=""/>
+            <input type="submit" id="btnSubmit" value="SUBMIT" />
             </td></tr>
 
 
@@ -232,8 +232,8 @@ echo '
 
                 <td>
 
-            <input type="number" id="result" name="mynumber2" placeholder="To" />
-            <select name="secondType" id = "secondType" onchange="convert()" >
+            <input type="number" id="result" name="from_value" placeholder="To" />
+            <select name="to_unit" id = "to_unit" onchange="convert()" >
                 <option value="cubicmeter"  id="cubicM"   >Cubic meter [m&#179]</option>
                 <option value="liter"   id="L"   >Liter [L]</option>
                 <option value="mililiter"   id="ml"   >Mililiter [ml]</option>
